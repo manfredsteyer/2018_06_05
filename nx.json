@@ -1,0 +1,23 @@
+{
+  "npmScope": "nx6-workspace",
+  "projects": {
+    "flight-app": {
+      "tags": []
+    },
+    "flight-app-e2e": {
+      "tags": []
+    },
+    "flight-admin": {
+      "tags": []
+    },
+    "flight-admin-e2e": {
+      "tags": []
+    },
+    "flight-api": {
+      "tags": []
+    },
+    "validation": {
+      "tags": []
+    }
+  }
+}
