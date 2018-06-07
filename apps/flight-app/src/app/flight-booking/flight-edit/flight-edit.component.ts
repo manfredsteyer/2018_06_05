@@ -37,4 +37,8 @@ export class FlightEditComponent implements OnInit, ExitComponent {
     });
   }
 
+  delete() {
+    console.error('delete not implemented yet');
+  }
+
 }

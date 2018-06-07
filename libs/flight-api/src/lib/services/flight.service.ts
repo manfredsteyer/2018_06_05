@@ -1,10 +1,10 @@
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 
-import {Observable} from 'rxjs';
+import {Observable, ConnectableObservable} from 'rxjs';
 import {Flight} from '../models/flight';
 import {of} from 'rxjs';
-import {delay} from 'rxjs/operators';
+import {delay, publish} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,13 +19,13 @@ export class FlightService {
   }
 
   load(from: string, to: string, urgent: boolean): void {
-    this.find(from, to, urgent)
-      .subscribe(
+    this.find(from, to, urgent).subscribe(
         flights => {
           this.flights = flights;
         },
         err => console.error('Error loading flights', err)
       );
+      
   }
 
   find(from: string, to: string, urgent: boolean = false): Observable<Flight[]> {
